@@ -1,17 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"SimpleConversationApp/conversations"
+	"fmt"
+)
 
-// next steps: 1. prepare package "conversations"
-// 			   2. prepare lengthDistance.go with corresponding functions
-//			   3. prepare area.go with corresponding functions
-//			   4. prepare volume.go with corresponding functions
-//			   5. prepare masswight.go with corresponding functions
-//			   6. prepare temperature.go with corresponding functions
-//			   7. prepare speed.go with corresponding functions
-//			   8. prepare time.go with corresponding functions
-//			   9. prepare data.go with corresponding functions
-//			   10. prepare error handling
+// next steps: 1. prepare package "conversations" (in progress)
+// 			   2. prepare lengthDistance.go with corresponding functions (done)
+//			   3. prepare area.go with corresponding functions (todo)
+//			   4. prepare volume.go with corresponding functions (todo)
+//			   5. prepare masswight.go with corresponding functions (todo)
+//			   6. prepare temperature.go with corresponding functions (todo)
+//			   7. prepare speed.go with corresponding functions (todo)
+//			   8. prepare time.go with corresponding functions (todo)
+//			   9. prepare data.go with corresponding functions (todo)
+//			   10. prepare error handling (todo)
 
 func LengthDistanceConversation() {
 	fmt.Println("You have selected an option: Length/Distance Conversations. Possible conversations are:")
@@ -26,17 +29,17 @@ func LengthDistanceConversation() {
 	fmt.Scanf("%s", &input)
 	switch input {
 	case "1":
-		// call function
+		conversations.MetersToKilometers()
 	case "2":
-		// call function
+		conversations.MetersToCentimeters()
 	case "3":
-		// call function
+		conversations.MetersToMillimeters()
 	case "4":
-		// call function
+		conversations.FeetToInches()
 	case "5":
-		// call function
+		conversations.MilesToKilometers()
 	case "6":
-		// call function
+		conversations.YardsToMeters()
 	default:
 		// call error handling function
 	}
@@ -53,13 +56,13 @@ func AreaConversions() {
 	fmt.Scanf("%s", &input)
 	switch input {
 	case "1":
-		// call function
+		conversations.SquareMetersToSquareKilometers()
 	case "2":
-		// call function
+		conversations.SquareFeetToSquareInches()
 	case "3":
-		// call function
+		conversations.AcresToSquareMeters()
 	case "4":
-		// call function
+		conversations.HectaresToSquareKilometers()
 	default:
 		// call error handling function
 	}

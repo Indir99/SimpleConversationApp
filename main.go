@@ -5,16 +5,8 @@ import (
 	"fmt"
 )
 
-// next steps: 1. prepare package "conversations" (in progress)
-// 			   2. prepare lengthDistance.go with corresponding functions (done)
-//			   3. prepare area.go with corresponding functions (todo)
-//			   4. prepare volume.go with corresponding functions (todo)
-//			   5. prepare masswight.go with corresponding functions (todo)
-//			   6. prepare temperature.go with corresponding functions (todo)
-//			   7. prepare speed.go with corresponding functions (todo)
-//			   8. prepare time.go with corresponding functions (todo)
-//			   9. prepare data.go with corresponding functions (todo)
-//			   10. prepare error handling (todo)
+// TODO<IRK>: Test application and fix bugs (reminder: most cases are not covered)
+// TODO<IRK>: Prepare Unit Tests for conversations package
 
 func LengthDistanceConversation() {
 	fmt.Println("You have selected an option: Length/Distance Conversations. Possible conversations are:")
@@ -41,7 +33,7 @@ func LengthDistanceConversation() {
 	case "6":
 		conversations.YardsToMeters()
 	default:
-		// call error handling function
+		HandleWrongInput(input)
 	}
 }
 
@@ -64,7 +56,7 @@ func AreaConversions() {
 	case "4":
 		conversations.HectaresToSquareKilometers()
 	default:
-		// call error handling function
+		HandleWrongInput(input)
 	}
 }
 
@@ -74,19 +66,20 @@ func VolumeConversions() {
 	fmt.Println("\t 2. Cubic Meters (m³) to Liters (L)")
 	fmt.Println("\t 3. Gallons (gal) to Liters (L)")
 	fmt.Println("\t 4. Cubic Inches (in³) to Cubic Centimeters (cm³)")
+	fmt.Printf("Enter your choice: ")
 	var input string
 	fmt.Scanf("%s", &input)
 	switch input {
 	case "1":
-		// call function
+		conversations.LitersToMilliliters()
 	case "2":
-		// call function
+		conversations.CubicMetersToLiters()
 	case "3":
-		// call function
+		conversations.GallonsToLiters()
 	case "4":
-		// call function
+		conversations.CubicInchesToCubicCentimeters()
 	default:
-		// call error handling function
+		HandleWrongInput(input)
 	}
 }
 
@@ -96,19 +89,20 @@ func MassWeightConversions() {
 	fmt.Println("\t 2. Pounds (lb) to Kilograms (kg)")
 	fmt.Println("\t 3. Ounces (oz) to Grams (g)")
 	fmt.Println("\t 4. Tons to Kilograms (kg)")
+	fmt.Printf("Enter your choice: ")
 	var input string
 	fmt.Scanf("%s", &input)
 	switch input {
 	case "1":
-		// call function
+		conversations.KilogramsToGrams()
 	case "2":
-		// call function
+		conversations.PoundsToKilograms()
 	case "3":
-		// call function
+		conversations.OuncesToGrams()
 	case "4":
-		// call function
+		conversations.TonsToKilograms()
 	default:
-		// call error handling function
+		HandleWrongInput(input)
 	}
 }
 
@@ -118,19 +112,20 @@ func TemperatureConversions() {
 	fmt.Println("\t 2. Fahrenheit (°F) to Celsius (°C)")
 	fmt.Println("\t 3. Celsius (°C) to Kelvin (K)")
 	fmt.Println("\t 4. Kelvin (K) to Celsius (°C)")
+	fmt.Printf("Enter your choice: ")
 	var input string
 	fmt.Scanf("%s", &input)
 	switch input {
 	case "1":
-		// call function
+		conversations.CelsiusToFahrenheit()
 	case "2":
-		// call function
+		conversations.FahrenheitToCelsius()
 	case "3":
-		// call function
+		conversations.CelsiusToKelvin()
 	case "4":
-		// call function
+		conversations.KelvinToCelsius()
 	default:
-		// call error handling function
+		HandleWrongInput(input)
 	}
 }
 
@@ -139,17 +134,18 @@ func SpeedConversions() {
 	fmt.Println("\t 1. Kilometers per Hour (km/h) to Miles per Hour (mph)")
 	fmt.Println("\t 2. Meters per Second (m/s) to Kilometers per Hour (km/h)")
 	fmt.Println("\t 3. Feet per Second (ft/s) to Meters per Second (m/s)")
+	fmt.Printf("Enter your choice: ")
 	var input string
 	fmt.Scanf("%s", &input)
 	switch input {
 	case "1":
-		// call function
+		conversations.KilometersPerHourToMilesPerHour()
 	case "2":
-		// call function
+		conversations.MetersPerSecondToKilometersPerHour()
 	case "3":
-		// call function
+		conversations.FeetPerSecondToMetersPerSecond()
 	default:
-		// call error handling function
+		HandleWrongInput(input)
 	}
 }
 
@@ -159,46 +155,48 @@ func TimeConversions() {
 	fmt.Println("\t 2. Minutes (min) to Hours (h)")
 	fmt.Println("\t 3. Hours (h) to Days (d)")
 	fmt.Println("\t 4. Days (d) to Weeks (wk)")
+	fmt.Printf("Enter your choice: ")
 	var input string
 	fmt.Scanf("%s", &input)
 	switch input {
 	case "1":
-		// call function
+		conversations.SecondsToMinutes()
 	case "2":
-		// call function
+		conversations.MinutesToHours()
 	case "3":
-		// call function
+		conversations.HoursToDays()
 	case "4":
-		// call function
+		conversations.DaysToWeeks()
 	default:
-		// call error handling function
+		HandleWrongInput(input)
 	}
 }
 
 func DataConversions() {
-	fmt.Println("You have selected an option: Data Conversations.P ossible conversations are:")
+	fmt.Println("You have selected an option: Data Conversations. Possible conversations are:")
 	fmt.Println("\t 1. Bits to Bytes")
 	fmt.Println("\t 2. Kilobytes (KB) to Megabytes (MB)")
 	fmt.Println("\t 3. Megabytes (MB) to Gigabytes (GB)")
 	fmt.Println("\t 4. Gigabytes (GB) to Terabytes (TB)")
+	fmt.Printf("Enter your choice: ")
 	var input string
 	fmt.Scanf("%s", &input)
 	switch input {
 	case "1":
-		// call function
+		conversations.BitsToBytes()
 	case "2":
-		// call function
+		conversations.KilobytesToMegabytes()
 	case "3":
-		// call function
+		conversations.MegabytesToGigabytes()
 	case "4":
-		// call function
+		conversations.GigabytesToTerabytes()
 	default:
-		// call error handling function
+		HandleWrongInput(input)
 	}
 }
 
 func HandleWrongInput(s string) {
-	fmt.Printf("You have entered the following choice: %q, but the required input is the range 1 to 8. Please try again. \n", s)
+	fmt.Printf("You have entered the following choice: %q, but that choice is not valid. Please try again. \n", s)
 }
 
 func StartSimpleApp() {
